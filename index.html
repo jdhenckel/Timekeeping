@@ -8,7 +8,6 @@
 <body>
     <div class="heading">
         <h1>DSS Timekeeping</h1>
-        Reconciling data from Clarity and Lawson
         <div class="topbar">
             <button id="1">Raw Data</button>
             <button id="2">Match Rules</button>
@@ -17,15 +16,46 @@
         </div>
     </div>
     <div class="childwrapper">
+    <!-- *************************************************************** -->
         <div class="child view1">
-            child view 1
+            <div> 
+                <label>Token status: </label> <span id="token">missing</span>
+            </div>
+            <div class="inputbox">
+                <div>    
+                    <label>Username: </label> <input id="user"/>
+                </div>
+                <div>    
+                    <label>Password: </label> <input id="pw" type="password"/>
+                </div>
+                <button onclick="logon()">Logon</button> 
+            </div>
+
+            <div> 
+                <div>    
+                    <label>Section: </label> <input id="s1"/>
+                </div>
+                <button onclick="importClarity()">Import time card details from Clarity</button>
+                <a href="foo" download>Download csv data</a>
+            </div>
+            <hr>
+            <div> 
+                <div>    
+                    <label>Section: </label> <input id="s2"/>
+                </div>
+                <button onclick="importLawson()">Import payments from Lawson</button>
+                <a href="foo" download>Download csv data</a>
+            </div>
         </div>
+    <!-- *************************************************************** -->
         <div class="child view2">
             child view 2
         </div>
+    <!-- *************************************************************** -->
         <div class="child view3">
             child view 3
         </div>
+    <!-- *************************************************************** -->
         <div class="child view4">
             child view 4
         </div>

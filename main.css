@@ -15,19 +15,42 @@ body {
 
 .topbar button {
     outline: none;
-    padding: 10px;
+    padding: 7px;
     font-size: 15px;
     margin: 10px;
 }
 
-.childwrapper {
-
+.child button {
+    padding: 5px 20px;
+    font-size: 15px;
 }
 
-.child {
-    
+.child div {
+    margin: 10px;
+}
+
+.childwrapper {
+    border: 2px solid #ddd;
+    padding: 0 0 60px 10px;
+}
+
+.view1 a {
+    margin-left: 50px;
 }
 
 .topbar .selected {
-    background-color: #79befb;
+    background-color: #b2e0ff;
 }
+
+.inputbox {
+    background-color: #d5dffb;
+    border: 1px solid #888;
+    width:500px;
+    padding:15px;
+}
+
+.childwrapper label {
+    display: inline-block;
+    width: 140px;
+}
+
