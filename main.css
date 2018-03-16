@@ -1,0 +1,33 @@
+
+body {
+    font-family: arial,verdana;
+}
+
+.heading {
+    text-align: center;
+    background-color: thistle;
+    padding-bottom: 15px;
+}
+
+.heading h1 {
+    margin: 0;
+}
+
+.topbar button {
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.childwrapper {
+
+}
+
+.child {
+    
+}
+
+.topbar .selected {
+    background-color: #79befb;
+}
