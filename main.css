@@ -1,17 +1,19 @@
 
 body {
-    font-family: arial,verdana;
+    font-family: segoe ui,system-ui,verdana,helvetica,arial;
 }
 
 .heading {
     text-align: center;
-    background-color: #decda5;
+    background-color: #fdf3dd;
     padding-bottom: 15px;
-    border-style: dashed;
+    border: 2px dashed gray;
+    border-width: 0 0 2px 0;
 }
 
 .heading h1 {
     margin: 0;
+    font-weight: normal;
 }
 
 .topbar button {
