@@ -23,6 +23,7 @@
                 <label>Clarity token: </label> <span id="token">missing</span>
             </div>
             <div class="inputbox">
+                <small><i>The logon is only needed for import.</i></small>
                 <div>    
                     <label>Username: </label> <input id="user"/>
                 </div>
@@ -33,18 +34,18 @@
             </div>
 
             <div> 
-            Click this button import <b>time card</b> data from Clarity to the database. <i> You should only need to click this once per month. </i>
+            Import <b>time card</b> data from Clarity to the database. <i> You should only need to do this once per month. </i>
                 <div>    
-                    <label>Section: </label> <input id="s1"/>
+                    <label>Section: </label> <input id="s1" size="100"/>
                 </div>
                 <button onclick="importClarity()">Import time card details from Clarity</button>
                 <a href="foo" download>Download csv raw data</a>
             </div>
             <hr>
             <div> 
-            Click this button import <b>payment data</b> from Lawson to the database. <i> You should only need to click this once per month. </i>
+            Import <b>payment data</b> from Lawson to the database. <i> You should only need to do this once per month. </i>
                 <div>    
-                    <label>Section: </label> <input id="s2"/>
+                    <label>Section: </label> <input id="s2" size="100"/>
                 </div>
                 <button onclick="importLawson()">Import payments from Lawson</button>
                 <a href="foo" download>Download csv raw data</a>
@@ -54,37 +55,78 @@
         <div class="child view2">
             <div> 
                 <button onclick="saveRules()">Save Rules</button>
+                <button onclick="testRules()">Test Rules</button>
             </div>
             <textarea id="rules"></textarea>
             <div class="vlist">
-                <div>Time Card Fields</div>
+                <h3>Time Card Fields</h3>
                 <div>
-                    <div>Hello 123</div>
-                    <div>Hello 123</div>
-                    <div>Hello 123</div>
-                    <div>Hello 123</div>
+                    <div>t.Name</div>
+                    <div>t.Department</div>
+                    <div>t.Task</div>
+                    <div>t.Date</div>
                 </div>
             </div>
             <div class="vlist">
-                <div>Payment Fields</div>
+                <h3>Payment Fields</h3>
                 <div>
-                    <div>Hello 123</div>
-                    <div>Hello 123</div>
-                    <div>Hello 123</div>
-                    <div>Hello 123</div>
-                    <div>Hello 123</div>
-                    <div>Hello 123</div>
-                    <div>Hello 123</div>
+                    <div>p.Name</div>
+                    <div>p.Task</div>
+                    <div>p.Date</div>
+                    <div>p.Other</div>
+                </div>
+            </div>
+            <div class="vlist">
+                <h3>Functions</h3>
+                <div>
+                    <div>equal(a,b)</div>
+                    <div>soundex(a,b)</div>
+                    <div>empty(a)</div>
+                    <div>fuzzy(a,b)</div>
+                    <div>contains(a,b)</div>
+                    <div>startsWith(a,b)</div>
+                    <div>endsWith(a,b)</div>
                 </div>
             </div>
         </div>
     <!-- *************************************************************** -->
         <div class="child view3">
-            child view 3
+            <div> 
+                <button onclick="reconcile()">Reconcile</button>
+                Using the rules, try to reconcile the time card and payment data.
+            </div>
+            <h3>Results </h3>
+            <div class="results">
+                <h3 style="background-color:#f99">Time card entries not matched: 3</h3>
+                <table>
+                    <tr><th>Name</th><th>Date</th><th>Task</th><th>Hours</th></tr>
+                    <tr><td>John Henckel</td><td>11/03/18</td><td>SOS Balcony Redudancy Project</td><td>3.14</td></tr>
+                    <tr><td>John Henckel</td><td>11/04/18</td><td>SOS Balcony Redudancy Project</td><td>2</td></tr>
+                    <tr><td>John Smith</td><td>11/05/18</td><td>Paring Tradeover Elvis Project</td><td>6</td></tr>
+                </table>
+            </div>
+            <div class="results">
+                <h3 style="background-color:#99f">Lawson payments not matched: 3</h3>
+                <table>
+                    <tr><th>Name</th><th>Date</th><th>Task</th><th>Hours</th></tr>
+                    <tr><td>Mary Angerston</td><td>11/03/18</td><td>SOS Balcony Redudancy Project</td><td>3</td></tr>
+                    <tr><td>Finlay Fromble</td><td>11/01/18</td><td>Kelp Reclamation</td><td>2.2</td></tr>
+                    <tr><td>Reese Tory</td><td>11/01/18</td><td>Kelp Reclamation</td><td>5.7</td></tr>
+                </table>
+            </div>
+            <div class="results">
+                <h3 style="background-color:#9f9">Matched Results: 559</h3>
+                <table>
+                    <tr><th>Name</th><th>Date</th><th>Task</th><th>Hours</th></tr>
+                    <tr><td>John Henckel</td><td>11/03/18</td><td>SOS Balcony Redudancy Project</td><td>3.14</td></tr>
+                    <tr><td>John Henckel</td><td>11/04/18</td><td>SOS Balcony Redudancy Project</td><td>2</td></tr>
+                    <tr><td>John Smith</td><td>11/05/18</td><td>Paring Tradeover Elvis Project</td><td>6</td></tr>
+                </table>
+            </div>
         </div>
     <!-- *************************************************************** -->
         <div class="child view4">
-            child view 4
+            todo - put stuff here.
         </div>
     </div>
 </body>

@@ -23,6 +23,7 @@ function clickButtonBar(x){
     let b = $(x.target);
     b.addClass("selected");
     $('.view' + b.attr('id')).show();
+    $('.results').hide();
 }
 
 
@@ -40,7 +41,14 @@ function logon() {
 }
 
 
+function reconcile() {
+    $('.results').show();
+}
+
+
 // for debugging stuff
 function print(...x) {
     console.log(JSON.stringify(x,null,4));
 }
+
+
