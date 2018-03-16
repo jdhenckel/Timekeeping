@@ -11,8 +11,7 @@ var token;
 function initialize() {
     $(".topbar button").click(clickButtonBar);
     
-    // simulate button click
-    $('#1').click();
+    clickButtonBar();
 }
 
 
@@ -20,6 +19,7 @@ function initialize() {
 function clickButtonBar(x){
     $('.childwrapper > div').hide();
     $(".topbar button").removeClass("selected");
+    if (x==null) return;
     let b = $(x.target);
     b.addClass("selected");
     $('.view' + b.attr('id')).show();
@@ -32,10 +32,10 @@ function logon() {
         password: $('#pw').val(),
     };
     print('attempt logon', userpw);
-    $.post('api/logon', userpw, (data, status) => {
+    $.post('api/logon', userpw, (data, status, xhr) => {
         print('logon result = ', data, status);
         token = data;
-        $('#token').text(token);
+        $('#token').text(token ? 'valid for ' + userpw.username : 'missing');
     });
 }
 

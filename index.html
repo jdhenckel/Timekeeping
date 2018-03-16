@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>DSS Timekeeping</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
@@ -19,7 +20,7 @@
     <!-- *************************************************************** -->
         <div class="child view1">
             <div> 
-                <label>Token status: </label> <span id="token">missing</span>
+                <label>Clarity token: </label> <span id="token">missing</span>
             </div>
             <div class="inputbox">
                 <div>    
@@ -32,24 +33,50 @@
             </div>
 
             <div> 
+            Click this button import <b>time card</b> data from Clarity to the database. <i> You should only need to click this once per month. </i>
                 <div>    
                     <label>Section: </label> <input id="s1"/>
                 </div>
                 <button onclick="importClarity()">Import time card details from Clarity</button>
-                <a href="foo" download>Download csv data</a>
+                <a href="foo" download>Download csv raw data</a>
             </div>
             <hr>
             <div> 
+            Click this button import <b>payment data</b> from Lawson to the database. <i> You should only need to click this once per month. </i>
                 <div>    
                     <label>Section: </label> <input id="s2"/>
                 </div>
                 <button onclick="importLawson()">Import payments from Lawson</button>
-                <a href="foo" download>Download csv data</a>
+                <a href="foo" download>Download csv raw data</a>
             </div>
         </div>
     <!-- *************************************************************** -->
         <div class="child view2">
-            child view 2
+            <div> 
+                <button onclick="saveRules()">Save Rules</button>
+            </div>
+            <textarea id="rules"></textarea>
+            <div class="vlist">
+                <div>Time Card Fields</div>
+                <div>
+                    <div>Hello 123</div>
+                    <div>Hello 123</div>
+                    <div>Hello 123</div>
+                    <div>Hello 123</div>
+                </div>
+            </div>
+            <div class="vlist">
+                <div>Payment Fields</div>
+                <div>
+                    <div>Hello 123</div>
+                    <div>Hello 123</div>
+                    <div>Hello 123</div>
+                    <div>Hello 123</div>
+                    <div>Hello 123</div>
+                    <div>Hello 123</div>
+                    <div>Hello 123</div>
+                </div>
+            </div>
         </div>
     <!-- *************************************************************** -->
         <div class="child view3">

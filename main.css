@@ -30,12 +30,19 @@ body {
 }
 
 .childwrapper {
-    border: 2px solid #ddd;
     padding: 0 0 60px 10px;
 }
 
 .view1 a {
     margin-left: 50px;
+}
+
+.view2 textarea {
+    width: 90%;
+    height: 300px;
+    font: normal 16px monospace;
+    line-height: 1.4em;
+
 }
 
 .topbar .selected {
@@ -52,5 +59,28 @@ body {
 .childwrapper label {
     display: inline-block;
     width: 140px;
+}
+
+.vlist {
+    float: left;
+    height: 500px;
+    padding-left: 20px;
+}
+
+.vlist > div:first-child {
+    font-weight: bold;
+}
+
+.vlist > div:nth-child(2) {
+    overflow-y: scroll;
+    height: 400px;
+    padding: 2px;
+}
+
+.vlist div div {
+    border: 1px solid gray;
+    margin: -1px 3px;
+    padding: 4px;
+    min-width: 200px;
 }
 
